@@ -37,7 +37,7 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
-MEDIA_ROOT = path.abspath(path.join(CUR_SETTING_DIR, '../assets/uploaded'))
+MEDIA_ROOT = path.abspath(path.join(CUR_SETTING_DIR, '../assets/media'))
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -59,7 +59,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    path.abspath(path.join(CUR_SETTING_DIR, '../assets/general')),
+    path.abspath(path.join(CUR_SETTING_DIR, '../assets/static')),
 )
 
 # List of finder classes that know how to find static files in
