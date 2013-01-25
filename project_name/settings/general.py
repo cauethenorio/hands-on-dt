@@ -2,7 +2,7 @@
 # General django settings for {{ project_name }} project.
 
 from os import path
-
+from .environment import DEBUG
 
 CUR_SETTING_DIR = path.dirname(__file__)
 
@@ -93,6 +93,13 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+# show debug toolbar if debug is true
+if DEBUG:
+    MIDDLEWARE_CLASSES += ('debug_toolbar.middleware.DebugToolbarMiddleware',)
+
+# debug toolbar is used only in local development
+INTERNAL_IPS = ('127.0.0.1',)
+
 ROOT_URLCONF = '{{ project_name }}.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
@@ -116,8 +123,15 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 
+    '{{ project_name }}.apps.pages',
+
+    'south',
     'imagekit',
 )
+
+# show debug toolbar if debug is true
+if DEBUG:
+    INSTALLED_APPS += ('debug_toolbar',)
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
