@@ -28,5 +28,5 @@ dist
 .idea
 
 # project
-settings/environment.py
-assets/collected
+*/settings/environment.py
+*/assets/collected
