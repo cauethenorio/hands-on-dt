@@ -2,31 +2,4 @@ extends includes/layout
 {% load i18n %}
 
 block content
-  div.hero-unit.image
-    div#sequence
-      ul.unstyled
-        li
-          div.text.animate-in
-            h1 Hello, world!
-            p This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
-            p: a.btn.btn-primary.btn-large Learn more &raquo;
-          img.animate-in(src=STATIC_URL + 'img/home/chamada-1-menor.jpg')
-        li
-          div.text OPA Dois
-          img(src=STATIC_URL + 'img/home/chamada-2-menor.jpg')
-
-  .row
-    .span6
-      h2 Encontre o brasão de sua família
-      .input-append
-        {% spaceless %}
-        input.span5(type="text")
-        button.btn.btn-primary(type="button")
-          i.icon-search
-        {% endspaceless %}
-      p Acesse diretamente a página do brasão de sua família através do campo de busca acima.
-
-    .span6
-      h2 {% trans 'Conheça nossos brasões' %}
-      p Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-      p: a.btn.btn-primary(href="#") View details &raquo;
+    p Some Text
