@@ -1,14 +1,15 @@
 ### Requirements for {{ project_name }}
 
-Django #==1.5
-South #==0.7.6
-django-extensions #==1.0.0
-pyjade #==1.7
-pillow #==1.7.8
-django-imagekit #==2.0.1
+Django
+South
+django-extensions
+pyjade
+pillow
+django-imagekit
+django_compressor
 
 # debug
-django-debug-toolbar #==0.9.4
+django-debug-toolbar
 
 # security
 django-sha2
