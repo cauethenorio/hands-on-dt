@@ -2,7 +2,9 @@
 # General django settings for {{ project_name }} project.
 
 from os import path
-from .environment import DEBUG
+from django_sha2 import get_password_hashers
+
+from .environment import DEBUG, HMAC_KEYS
 
 CUR_SETTING_DIR = path.dirname(__file__)
 
@@ -10,6 +12,7 @@ ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
 
+TEMPLATE_DEBUG = DEBUG
 MANAGERS = ADMINS
 
 # Local time zone for this installation. Choices can be found here:
@@ -71,9 +74,6 @@ STATICFILES_FINDERS = (
     # 'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
-# Make this unique, and don't share it with anybody.
-SECRET_KEY = '{{ secret_key }}'
-
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
     ('pyjade.ext.django.Loader', (
@@ -129,11 +129,17 @@ INSTALLED_APPS = (
     'south',
     'imagekit',
     'compressor',
+    'django_sha2',
 )
 
 # show debug toolbar if debug is true
 if DEBUG:
     INSTALLED_APPS += ('debug_toolbar',)
+
+
+# generate a hasher class for each of our HMAC_KEYS (https://github.com/fwenzel/django-sha2)
+BASE_PASSWORD_HASHERS = ('django_sha2.hashers.BcryptHMACCombinedPasswordVerifier',)
+PASSWORD_HASHERS = get_password_hashers(BASE_PASSWORD_HASHERS, HMAC_KEYS)
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to

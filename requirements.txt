@@ -13,3 +13,4 @@ django-debug-toolbar
 
 # security
 django-sha2
+py-bcrypt

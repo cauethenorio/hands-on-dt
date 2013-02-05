@@ -2,7 +2,6 @@
 # Local django settings for {{ project_name }} project.
 
 DEBUG = True
-TEMPLATE_DEBUG = DEBUG
 
 DATABASES = {
     'default': {
@@ -16,6 +15,13 @@ DATABASES = {
     }
 }
 
+# Session key - Make this unique, and don't share it with anybody.
+SECRET_KEY = '__secret_key__'
+
+# increase over time to slowing the password hashing process (https://github.com/fwenzel/django-sha2)
+BCRYPT_ROUNDS = 12
+
+# users passwords HMAC secret keys (https://github.com/fwenzel/django-sha2)
 HMAC_KEYS = {
-    '2000-01-01': '',
+    '__YYYY-MM-DD__': '__secret_key_2__',
 }
