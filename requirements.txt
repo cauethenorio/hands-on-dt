@@ -7,6 +7,7 @@ pyjade
 pillow
 django-imagekit
 django_compressor
+django-crispy-forms
 
 # debug
 django-debug-toolbar

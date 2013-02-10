@@ -25,3 +25,16 @@ BCRYPT_ROUNDS = 12
 HMAC_KEYS = {
     '__YYYY-MM-DD__': '__secret_key_2__',
 }
+
+# email settings
+
+CONTACT_FORM_TO_EMAIL = 'your@email.com'
+EMAIL_SUBJECT_PREFIX = '[{{ project_name }}]'
+
+EMAIL_HOST = 'localhost'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = 'pass'
+
+#EMAIL_PORT = '' # 25 default
+#EMAIL_USE_TLS = True # false default
+

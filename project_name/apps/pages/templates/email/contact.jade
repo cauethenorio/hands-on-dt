@@ -1,0 +1,35 @@
+-load i18n
+!!! 5
+html
+    body
+        div
+            h4
+                -trans "Mensagem do formulário de contato"
+            p {% now "j \d\e F \d\e Y \à\s H\:i" %}
+            table
+                tr
+                    td
+                        -trans "Nome"
+                    td {{ name }}
+                tr
+                    td
+                        -trans "Email"
+                    td
+                        a(href="mailto:{{ email }}") {{ email }}
+                tr
+                    td
+                        -trans "Telefone"
+                    td {{ phone }}
+                tr
+                    td
+                        div(style="font-weight:bold;")
+                            -trans "Mensagem"
+                        p {{ message }}
+            div
+                b IP:
+                |  {{ request.META.HTTP_X_FORWARDED_FOR|default:request.META.REMOTE_ADDR }}
+                br
+                b
+                    -trans "Navegador/SO"
+                    | :
+                |  {{ request.META.HTTP_USER_AGENT }}

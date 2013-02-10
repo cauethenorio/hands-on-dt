@@ -11,9 +11,10 @@ CUR_SETTING_DIR = path.dirname(__file__)
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
+MANAGERS = ADMINS
 
 TEMPLATE_DEBUG = DEBUG
-MANAGERS = ADMINS
+CRISPY_FAIL_SILENTLY = not DEBUG
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -116,7 +117,7 @@ INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.sites',
+    #'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
@@ -130,11 +131,22 @@ INSTALLED_APPS = (
     'imagekit',
     'compressor',
     'django_sha2',
+    'crispy_forms',
+    'pyjade.ext.django', # https://github.com/SyrusAkbary/pyjade/issues/37
 )
 
 # show debug toolbar if debug is true
 if DEBUG:
     INSTALLED_APPS += ('debug_toolbar',)
+
+# email Settings
+
+DEFAULT_FROM_EMAIL = 'your@email.com'
+
+if DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 
 # generate a hasher class for each of our HMAC_KEYS (https://github.com/fwenzel/django-sha2)

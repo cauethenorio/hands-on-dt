@@ -11,7 +11,7 @@ from .apps.pages import urls as pages_urls
 
 urlpatterns = patterns('',
 
-    url(r'^', include(pages_urls)),
+    url(r'^', include(pages_urls, namespace='pages')),
     # Examples:
     # url(r'^$', '{{ project_name }}.views.home', name='home'),
     # url(r'^{{ project_name }}/', include('{{ project_name }}.foo.urls')),
