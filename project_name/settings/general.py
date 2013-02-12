@@ -2,7 +2,9 @@
 # General django settings for {{ project_name }} project.
 
 from os import path
+
 from django_sha2 import get_password_hashers
+import pyjade.ext.django  # https://github.com/SyrusAkbary/pyjade/issues/37
 
 from .environment import DEBUG, HMAC_KEYS
 
@@ -26,7 +28,17 @@ TIME_ZONE = 'America/Sao_Paulo'
 # http://www.i18nguy.com/unicode/language-identifiers.html
 LANGUAGE_CODE = 'pt-br'
 
-SITE_ID = 1
+# language settings (https://docs.djangoproject.com/en/dev/topics/i18n/translation/)
+_ = lambda s: s
+
+LANGUAGES = (
+    ('pt-br', _('Português')),
+    ('en', _('Inglês')),
+)
+
+LOCALE_PATHS = (
+    path.abspath(path.join(CUR_SETTING_DIR, '../locale')),
+)
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
@@ -85,8 +97,9 @@ TEMPLATE_LOADERS = (
 )
 
 MIDDLEWARE_CLASSES = (
-    'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     #'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -132,12 +145,12 @@ INSTALLED_APPS = (
     'compressor',
     'django_sha2',
     'crispy_forms',
-    'pyjade.ext.django', # https://github.com/SyrusAkbary/pyjade/issues/37
 )
 
 # show debug toolbar if debug is true
 if DEBUG:
     INSTALLED_APPS += ('debug_toolbar',)
+
 
 # email Settings
 

@@ -1,15 +1,17 @@
-from django.conf.urls import patterns, include, url, static
+# coding: utf-8
 
+from django.conf import settings
+from django.conf.urls import include, url, static
+from django.conf.urls.i18n import i18n_patterns
 
-from . import settings
-
+#from .libs.urls import i18n_patterns
 from .apps.pages import urls as pages_urls
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
 
-urlpatterns = patterns('',
+urlpatterns = i18n_patterns('',
 
     url(r'^', include(pages_urls, namespace='pages')),
     # Examples:

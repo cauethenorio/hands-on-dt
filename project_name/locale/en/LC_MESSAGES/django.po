@@ -1,0 +1,94 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-02-12 15:52-0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: apps/pages/forms.py:20
+msgid "Por favor entre com seu nome"
+msgstr "Please enter your name"
+
+#: apps/pages/forms.py:25
+msgid "Por favor entre com seu email"
+msgstr "Please enter your email"
+
+#: apps/pages/forms.py:30
+msgid "Por favor entre com a mensagem a ser enviada"
+msgstr "Please enter the message to be sent"
+
+#: apps/pages/forms.py:48
+msgid "Enviar mensagem"
+msgstr "Send Message"
+
+#: apps/pages/forms.py:55 apps/pages/templates/email/contact.jade:5
+msgid "Mensagem enviada pelo formulário de contato"
+msgstr "Message sent by contact form"
+
+#: apps/pages/models.py:12
+msgid "Data de envio"
+msgstr "Sent date"
+
+#: apps/pages/models.py:17 apps/pages/templates/email/contact.jade:11
+msgid "Nome"
+msgstr "Name"
+
+#: apps/pages/models.py:18 apps/pages/templates/email/contact.jade:17
+msgid "Email"
+msgstr "Email"
+
+#: apps/pages/models.py:19 apps/pages/templates/email/contact.jade:23
+msgid "Telefone"
+msgstr "Phone"
+
+#: apps/pages/models.py:21 apps/pages/templates/email/contact.jade:30
+msgid "Mensagem"
+msgstr "Message"
+
+#: apps/pages/models.py:24
+msgid "mensagem de contato"
+msgstr "contact message"
+
+#: apps/pages/models.py:25
+msgid "mensagens de contato"
+msgstr "contact messages"
+
+#: apps/pages/urls.py:10
+msgid "^perguntas-frequentes$"
+msgstr "^faq$"
+
+#: apps/pages/urls.py:11
+msgid "^contato$"
+msgstr "^contact$"
+
+#: apps/pages/templates/email/contact.jade:38
+msgid "Navegador/SO"
+msgstr "Browser/OS"
+
+#: apps/pages/templates/includes/header.jade:9
+msgid "Perguntas frequentes"
+msgstr "F.A.Q."
+
+#: apps/pages/templates/includes/header.jade:11
+msgid "Contato"
+msgstr "Contact"
+
+#: settings/general.py:35
+msgid "Português"
+msgstr "Portuguese"
+
+#: settings/general.py:36
+msgid "Inglês"
+msgstr "English"

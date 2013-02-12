@@ -39,3 +39,11 @@ else
 	@find . -name *.jade-e -exec rm {} \;
 	@echo "Project name updated in jade templates"
 endif
+
+messages:
+	@echo "Collecting en i18n messages..."
+	@cd {{ project_name }} ; ../manage.py makemessages -v 1 -l en -e jade,html,txt
+
+compilemessages:
+	@echo "Compiling i18n messages..."
+	@cd {{ project_name }} ; ../manage.py compilemessages
