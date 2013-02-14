@@ -32,8 +32,8 @@ LANGUAGE_CODE = 'pt-br'
 _ = lambda s: s
 
 LANGUAGES = (
-    ('pt-br', _('Português')),
-    ('en', _('Inglês')),
+    ('pt-br', _(u'Português')),
+    ('en', _(u'Inglês')),
 )
 
 LOCALE_PATHS = (
@@ -98,7 +98,7 @@ TEMPLATE_LOADERS = (
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.locale.LocaleMiddleware',
+    '{{ project_name }}.libs.i18n_routing.SimpleLocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     #'debug_toolbar.middleware.DebugToolbarMiddleware',
@@ -150,6 +150,18 @@ INSTALLED_APPS = (
 # show debug toolbar if debug is true
 if DEBUG:
     INSTALLED_APPS += ('debug_toolbar',)
+
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.contrib.auth.context_processors.auth",
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    "django.core.context_processors.static",
+    "django.core.context_processors.tz",
+    "django.contrib.messages.context_processors.messages",
+    "django.core.context_processors.request",
+)
 
 
 # email Settings

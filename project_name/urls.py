@@ -2,9 +2,9 @@
 
 from django.conf import settings
 from django.conf.urls import include, url, static
-from django.conf.urls.i18n import i18n_patterns
+#from django.conf.urls.i18n import i18n_patterns
 
-#from .libs.urls import i18n_patterns
+from .libs.i18n_routing import simple_i18n_patterns as i18n_patterns
 from .apps.pages import urls as pages_urls
 
 # Uncomment the next two lines to enable the admin:
