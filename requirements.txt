@@ -1,9 +1,9 @@
 ### Requirements for {{ project_name }}
 
-Django
+https://github.com/django/django/archive/stable/1.5.x.zip
 South
 django-extensions
-pyjade
+git+https://github.com/SyrusAkbary/pyjade.git
 pillow
 django-imagekit
 django_compressor
