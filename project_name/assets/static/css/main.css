@@ -1,0 +1,33 @@
+/* bootstrap requirements */
+
+body {
+    position:relative;
+    padding-top:60px;
+}
+
+@media (max-width: 979px) {
+    body {
+        padding-top:0;
+    }
+}
+
+/* i18n flags */
+
+.navbar .nav .lang {
+    display: inline-block;
+    width:24px;
+    height:20px;
+    margin: -2px 0;
+    line-height: 20px;
+    vertical-align: text-top;
+    background-repeat: no-repeat;
+    background-position: left -2px;
+}
+
+.navbar .nav .lang.pt-br {
+    background-image: url(../images/flags/pt-br.png);
+}
+
+.navbar .nav .lang.en {
+    background-image: url(../images/flags/en.png);
+}

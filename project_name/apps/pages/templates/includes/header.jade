@@ -1,16 +1,33 @@
 -load i18n
--load url from future
-div.navbar.navbar-fixed-top
-  div.navbar-inner
-    div.container
+.navbar.navbar-fixed-top
+  .navbar-inner
+    .container
       a.btn.btn-navbar(data-toggle="collapse", data-target=".nav-collapse")
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      h1: a.brand(href="{% url 'pages:home' %}") __project_name__
-      div.nav-collapse
-        ul.nav.pull-right
+      a.brand(href="{% url 'pages:home' %}") __project_name__
+      .nav-collapse.collapse
+        ul.nav
           li: a(href="{% url 'pages:faq' %}")
             - trans "Perguntas frequentes"
           li: a(href="{% url 'pages:contact' %}")
             - trans "Contato"
+        ul.nav.pull-right
+          li.dropdown
+            -get_language_info for LANGUAGE_CODE as curr_lang
+            a.dropdown-toggle(href="#", data-toggle="dropdown")
+              i.lang(class="{{ curr_lang.code }}")
+              = " "
+              = curr_lang.name_local
+              b.caret
+            ul.dropdown-menu
+              -get_language_info_list for LANGUAGES as languages
+              -for lang in languages
+                -if lang.code != curr_lang.code
+                  -language lang.code
+                    li: a(href="{% url request.resolver_match.view_name %}")
+                      i.lang(class="{{ lang.code }}")
+                      = " "
+                      = lang.name_local
+                  -endlanguage
