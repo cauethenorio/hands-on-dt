@@ -3,4 +3,33 @@ extends includes/layout
 -load crispy_forms_tags
 
 block content
-    -crispy form
+  .page-header: h1: -trans "Contate-nos"
+  .row-fluid
+    .span5
+      p.lead
+        -trans "Entre em contato conosco por"
+        | :
+
+      dl
+        dt: -trans "Email"
+        dd: a(href="mailto:your@email.com") your@email.com
+
+      dl
+        dt: -trans "Telefone"
+        dd: a(href="tel:+551133334444") +55 (11) 3333-4444
+        dd: a(href="tel:+551198982121") +55 (11) 9898-2121
+
+      dl
+        dt: -trans "Endereço"
+        dd
+          | Av Paulista 1000
+          br
+          | CEP 01310-100
+          br
+          | São Paulo - SP, Brasil
+
+    .span7
+      p.lead
+        -trans "Ou nos envie uma mensagem pelo formulário abaixo"
+        | :
+      -crispy form
