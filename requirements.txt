@@ -8,6 +8,7 @@ pillow
 django-imagekit
 django_compressor
 django-crispy-forms
+django-modeltranslation>=0.5
 
 # debug
 django-debug-toolbar

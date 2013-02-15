@@ -13,8 +13,10 @@ def home(request):
 
 class FaqView(ListView):
     template_name = 'faq.jade'
-    queryset = models.FrequentQuestion.objects.active()
-    context_object_name = 'faqs'
+    context_object_name = 'questions'
+
+    def get_queryset(self):
+        return models.FrequentQuestion.objects.active()
 
 
 class ContactView(FormView):

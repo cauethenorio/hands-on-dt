@@ -8,7 +8,7 @@ from django.utils.translation import ugettext_lazy as _
 from crispy_forms import helper, layout, bootstrap
 
 from . import models
-from {{ project_name }}.libs.form import ExtendedMetaModelForm
+from ...libs.form import ExtendedMetaModelForm
 
 class ContactMessageForm(ExtendedMetaModelForm):
 

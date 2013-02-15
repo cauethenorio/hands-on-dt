@@ -140,11 +140,12 @@ INSTALLED_APPS = (
 
     '{{ project_name }}.apps.pages',
 
-    'south',
-    'imagekit',
     'compressor',
-    'django_sha2',
     'crispy_forms',
+    'django_sha2',
+    'imagekit',
+    'modeltranslation',
+    'south',
 )
 
 # show debug toolbar if debug is true

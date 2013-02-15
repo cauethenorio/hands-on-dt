@@ -3,6 +3,7 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
+from modeltranslation.translator import MultilingualManager
 import django_extensions.db.fields as djext_fields
 
 
@@ -22,7 +23,7 @@ class ContactMessage(models.Model):
         verbose_name_plural = _('mensagens de contato')
 
 
-class FrequentQuestionModelManager(models.Manager):
+class FrequentQuestionModelManager(MultilingualManager):
 
     def active(self):
         return self.get_query_set().filter(active=True)
