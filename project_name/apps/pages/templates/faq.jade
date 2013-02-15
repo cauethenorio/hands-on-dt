@@ -1,0 +1,26 @@
+extends includes/layout
+-load i18n
+
+block content
+  .page-header
+    h1: -trans "Perguntas frequentes"
+
+  -if faqs
+    ol
+      -for faq in faqs
+        li(id=faq.slug)
+          h4.question= faq.text
+          p.answer= faq.answer
+  -else
+    .alert.alert-info.lead: -trans "Ainda não há questões cadastradas"
+
+  hr
+  p.lead
+    b: -trans "Não encontrou sua dúvida nessa página?"
+    br
+    -url "pages:contact" as contact_link
+    -with link_open='<a href="'|add:contact_link|add:'">'|safe link_close='</a>'|safe
+      -blocktrans
+        | Envie-nos sua questão através do {{ link_open }}
+        | formulário de contato{{ link_close }}
+        | e ficaremos felizes em respondê-la.
