@@ -49,8 +49,10 @@ class ContactMessageForm(ExtendedMetaModelForm):
             )
         )
 
-    def send_email(self):
+    def send_email(self, request):
+        self.cleaned_data['request'] = request
         email_body = render_to_string('email/contact.jade', self.cleaned_data)
+
         email_message = EmailMessage(
             _(u'Mensagem enviada pelo formulário de contato'),
             email_body,
