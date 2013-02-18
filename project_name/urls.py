@@ -7,22 +7,20 @@ from django.conf.urls import include, url, static
 from .libs.i18n_routing import simple_i18n_patterns as i18n_patterns
 from .apps.pages import urls as pages_urls
 
-# Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
+# Comment the next two lines to disable the admin:
+from django.contrib import admin
+admin.autodiscover()
 
 urlpatterns = i18n_patterns('',
 
     url(r'^', include(pages_urls, namespace='pages')),
+
     # Examples:
     # url(r'^$', '{{ project_name }}.views.home', name='home'),
     # url(r'^{{ project_name }}/', include('{{ project_name }}.foo.urls')),
 
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
-    # url(r'^admin/', include(admin.site.urls)),
+    # admin in a different URL
+    url(r'^adm/', include(admin.site.urls)),
 )
 
 # serving uploaded files for development

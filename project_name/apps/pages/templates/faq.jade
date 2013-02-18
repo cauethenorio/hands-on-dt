@@ -8,7 +8,7 @@ block content
   -if questions
     ol
       -for question in questions
-        li(id=question.slug)
+        li(id=question.id)
           h4.question= question.text
           p.answer= question.answer
   -else

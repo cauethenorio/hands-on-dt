@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-12 15:52-0200\n"
+"POT-Creation-Date: 2013-02-18 11:57-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,71 +17,161 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: apps/pages/forms.py:20
+#: apps/pages/forms.py:21
 msgid "Por favor entre com seu nome"
 msgstr "Please enter your name"
 
-#: apps/pages/forms.py:25
+#: apps/pages/forms.py:26
 msgid "Por favor entre com seu email"
 msgstr "Please enter your email"
 
-#: apps/pages/forms.py:30
+#: apps/pages/forms.py:31
 msgid "Por favor entre com a mensagem a ser enviada"
 msgstr "Please enter the message to be sent"
 
-#: apps/pages/forms.py:48
+#: apps/pages/forms.py:49
 msgid "Enviar mensagem"
 msgstr "Send Message"
 
-#: apps/pages/forms.py:55 apps/pages/templates/email/contact.jade:5
+#: apps/pages/forms.py:58 apps/pages/templates/email/contact.jade:5
 msgid "Mensagem enviada pelo formulário de contato"
 msgstr "Message sent by contact form"
 
-#: apps/pages/models.py:12
+#: apps/pages/models.py:13
 msgid "Data de envio"
 msgstr "Sent date"
 
-#: apps/pages/models.py:17 apps/pages/templates/email/contact.jade:11
+#: apps/pages/models.py:15 apps/pages/templates/email/contact.jade:10
 msgid "Nome"
 msgstr "Name"
 
-#: apps/pages/models.py:18 apps/pages/templates/email/contact.jade:17
+#: apps/pages/models.py:16 apps/pages/templates/contact/index.jade:12
+#: apps/pages/templates/email/contact.jade:15
 msgid "Email"
 msgstr "Email"
 
-#: apps/pages/models.py:19 apps/pages/templates/email/contact.jade:23
+#: apps/pages/models.py:17 apps/pages/templates/contact/index.jade:18
+#: apps/pages/templates/email/contact.jade:21
 msgid "Telefone"
 msgstr "Phone"
 
-#: apps/pages/models.py:21 apps/pages/templates/email/contact.jade:30
+#: apps/pages/models.py:19 apps/pages/templates/email/contact.jade:27
 msgid "Mensagem"
 msgstr "Message"
 
-#: apps/pages/models.py:24
+#: apps/pages/models.py:20
+msgid "IP"
+msgstr ""
+
+#: apps/pages/models.py:21
+msgid "User agent"
+msgstr ""
+
+#: apps/pages/models.py:30
 msgid "mensagem de contato"
 msgstr "contact message"
 
-#: apps/pages/models.py:25
+#: apps/pages/models.py:31
 msgid "mensagens de contato"
 msgstr "contact messages"
+
+#: apps/pages/models.py:45
+msgid "Data de criação"
+msgstr "Creation date"
+
+#: apps/pages/models.py:46
+msgid "Data de atualização"
+msgstr "Modification date"
+
+#: apps/pages/models.py:47
+msgid "Ativo"
+msgstr "Active"
+
+#: apps/pages/models.py:50
+msgid "Posição"
+msgstr "Position"
+
+#: apps/pages/models.py:52
+msgid "A posição em que você gostaria que a questão fosse exibida."
+msgstr "The position in which you would like the question to be displayed."
+
+#: apps/pages/models.py:55
+msgid "Texto"
+msgstr "Text"
+
+#: apps/pages/models.py:56
+msgid "Resposta"
+msgstr "Answer"
+
+#: apps/pages/models.py:67
+msgid "Pergunta frequente"
+msgstr "frequent question"
+
+#: apps/pages/models.py:68 apps/pages/templates/faq.jade:3
+#: apps/pages/templates/includes/header.jade:7
+msgid "Perguntas frequentes"
+msgstr "F.A.Q."
 
 #: apps/pages/urls.py:10
 msgid "^perguntas-frequentes$"
 msgstr "^faq$"
 
 #: apps/pages/urls.py:11
-msgid "^contato$"
-msgstr "^contact$"
+msgid "^contato/"
+msgstr "^contact/"
 
-#: apps/pages/templates/email/contact.jade:38
+#: apps/pages/urls.py:14
+msgid "^obrigado$"
+msgstr "^thanks$"
+
+#: apps/pages/templates/faq.jade:12
+msgid "Ainda não há questões cadastradas"
+msgstr "For now there are no questions"
+
+#: apps/pages/templates/faq.jade:15
+msgid "Não encontrou sua dúvida nessa página?"
+msgstr "Did not find your question on this page?"
+
+#: apps/pages/templates/faq.jade:15
+#, python-format
+msgid ""
+"Envie-nos sua questão através do %(open_link)s\n"
+"formulário de contato%(close_link)s\n"
+"e ficaremos felizes em respondê-la.\n"
+msgstr ""
+"Send us your question using the %(open_link)s\n"
+"contact form%(close_link)s\n"
+"and we will be happy to answer it.\n"
+
+#: apps/pages/templates/contact/index.jade:3
+msgid "Contate-nos"
+msgstr "Contact us"
+
+#: apps/pages/templates/contact/index.jade:8
+msgid "Entre em contato conosco por"
+msgstr "Please contact us by"
+
+#: apps/pages/templates/contact/index.jade:26
+msgid "Endereço"
+msgstr "Address"
+
+#: apps/pages/templates/contact/index.jade:36
+msgid "Ou nos envie uma mensagem pelo formulário abaixo"
+msgstr "Or send us a message via the form below"
+
+#: apps/pages/templates/contact/thanks.jade:3
+msgid "Obrigado!"
+msgstr "Thanks!"
+
+#: apps/pages/templates/contact/thanks.jade:6
+msgid "Recebemos sua mensagem e a responderemos em breve."
+msgstr "We received your message and will respond soon."
+
+#: apps/pages/templates/email/contact.jade:34
 msgid "Navegador/SO"
 msgstr "Browser/OS"
 
 #: apps/pages/templates/includes/header.jade:9
-msgid "Perguntas frequentes"
-msgstr "F.A.Q."
-
-#: apps/pages/templates/includes/header.jade:11
 msgid "Contato"
 msgstr "Contact"
 

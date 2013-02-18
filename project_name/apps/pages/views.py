@@ -1,10 +1,14 @@
 # coding: utf-8
 
+from django.core.urlresolvers import reverse_lazy
 from django.shortcuts import render
+from django.views.generic import TemplateView
 from django.views.generic.edit import FormView
 from django.views.generic.list import ListView
 
+
 from . import forms, models
+from ...libs.general import get_client_ip
 
 
 def home(request):
@@ -20,12 +24,18 @@ class FaqView(ListView):
 
 
 class ContactView(FormView):
-    template_name = 'contact.jade'
+    template_name = 'contact/index.jade'
     form_class = forms.ContactMessageForm
-    success_url = '/thanks/'
+    success_url = reverse_lazy('pages:contact:thanks')
 
     def form_valid(self, form):
-        form.save()
-        form.send_email(self.request)
+        message = form.save(commit=False)
+        message.ip = get_client_ip(self.request)
+        message.user_agent = self.request.META.get('HTTP_USER_AGENT')
+        message.save()
 
+        form.send_email(self.request)
         return super(ContactView, self).form_valid(form)
+
+class ContactThanksView(TemplateView):
+    template_name = 'contact/thanks.jade'

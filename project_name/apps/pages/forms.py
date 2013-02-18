@@ -14,6 +14,7 @@ class ContactMessageForm(ExtendedMetaModelForm):
 
     class Meta:
         model = models.ContactMessage
+        exclude = ('ip', 'user_agent')
         field_args = {
             'name': {
                 '+error_messages': {
