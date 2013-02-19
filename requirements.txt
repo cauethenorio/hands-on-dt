@@ -9,6 +9,7 @@ django-imagekit
 django_compressor
 django-crispy-forms
 django-modeltranslation>=0.5
+django-grappelli>=2.4.3
 
 # debug
 django-debug-toolbar

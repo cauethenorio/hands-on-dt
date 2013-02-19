@@ -133,7 +133,8 @@ INSTALLED_APPS = (
     #'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Comment the next line to disable the admin:
+    # Comment the next two linse to disable the admin:
+    'grappelli',
     'django.contrib.admin',
 
     '{{ project_name }}.apps.pages',
@@ -156,6 +157,9 @@ from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
 TEMPLATE_CONTEXT_PROCESSORS = TCP + (
     'django.core.context_processors.request',
 )
+
+# grapelli config
+GRAPPELLI_ADMIN_TITLE = u'Administração __project_name__'
 
 
 # email Settings

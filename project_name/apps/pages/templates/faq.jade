@@ -10,7 +10,7 @@ block content
       -for question in questions
         li(id=question.id)
           h4.question= question.text
-          p.answer= question.answer
+          p.answer!= question.answer|safe
   -else
     .alert.alert-info.lead: -trans "Ainda não há questões cadastradas"
 
@@ -18,7 +18,7 @@ block content
   p.lead
     b: -trans "Não encontrou sua dúvida nessa página?"
     br
-    -url "pages:contact" as contact_link
+    -url "pages:contact:index" as contact_link
     -with open_link='<a href="'|add:contact_link|add:'">'|safe close_link='</a>'|safe
       -blocktrans
         | Envie-nos sua questão através do {{ open_link }}

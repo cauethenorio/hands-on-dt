@@ -1,12 +1,15 @@
 # coding: utf-8
 
+from django.db import models
 from django.contrib import admin
+
 from modeltranslation.admin import TranslationAdmin
 
 from . import models
+from ...libs.admin import CommonAdmin
 
 
-class FaqAdmin(TranslationAdmin):
+class FaqAdmin(TranslationAdmin, CommonAdmin):
 
     search_fields = ('text_pt_br', 'text_en', 'answer')
     list_display = ('sort_order', 'active', '__unicode__')
@@ -15,7 +18,7 @@ class FaqAdmin(TranslationAdmin):
     list_filter = ('active_pt_br', 'active_en')
 
 
-class ContactMessageAdmin(admin.ModelAdmin):
+class ContactMessageAdmin(CommonAdmin):
     def has_add_permission(self, request):
         return False
 
