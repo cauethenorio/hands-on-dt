@@ -12,12 +12,12 @@ class CommonAdmin(admin.ModelAdmin):
     class Media:
         js = (
             'js/admin/jquery-no-conflict.js',
-            'js/components/redactor/%s.js' % get_language().replace('-', '_'),
-            'js/components/redactor/redactor.min.js',
+            'components/redactor/%s.js' % get_language().replace('-', '_'),
+            'components/redactor/redactor.min.js',
             'js/admin/enable-redactor.js'
         )
         css = {
             'all': (
-                'js/components/redactor/redactor.css',
+                'components/redactor/redactor.css',
             )
         }

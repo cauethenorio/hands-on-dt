@@ -30,5 +30,4 @@ dist
 # project
 */settings/environment.py
 */assets/collected
-*/assets/static/js/components
-*/assets/static/css/bootstrap
+*/assets/static/components

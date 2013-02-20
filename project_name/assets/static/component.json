@@ -1,0 +1,9 @@
+{
+  "name": "js",
+  "version": "0.0.0",
+  "dependencies": {
+    "jquery": ">=1.9.0",
+    "bootstrap": "http://twitter.github.com/bootstrap/assets/bootstrap.zip",
+    "font-awesome": ">=1.9.0"
+  }
+}
