@@ -48,9 +48,11 @@ ifeq ($(NAME),)
 	@echo Usage: make name NAME=\"Project name\"
 else
 	@echo "${START_PREFIX}Changing project name in templates..."
-	@find . -name '*.jade' -or -name '*.py' -exec sed -i -e 's/__project_name__/$(NAME)/g' {} \;
-	@find . -name '*.jade-e' -or -name '*.py-e' -exec rm {} \;
-	@echo "${DONE_PREFIX}Project name updated in jade templates\n"
+	@find . -name '*.jade' -exec sed -i -e 's/__project_name__/$(NAME)/g' {} \;
+	@find . -name '*.py' -exec sed -i -e 's/__project_name__/$(NAME)/g' {} \;
+	@find . -name '*.jade-e' -exec rm {} \;
+	@find . -name '*.py-e' -exec rm {} \;
+	@echo "${DONE_PREFIX}Project name updated in python files and jade templates\n"
 endif
 
 messages:
